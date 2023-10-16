@@ -1,0 +1,227 @@
+:root{
+  --dark-color: rgb(56, 71, 71);
+  --light-color: rgb(248, 241, 231);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-image: url("../images/black-white-bryce.jpg");
+  }
+  
+.container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav content"
+      "footer footer";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 30px;
+    height: 100vh;
+}
+  
+header {
+  grid-area: header;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  margin-right: 0;
+}
+
+h1 {
+  display: flex;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: right;
+  justify-content: space-between;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  grid-area: nav;
+  margin-left: 0.5rem;
+  background-color: none;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+main {
+  grid-area: content;
+  text-align: center;
+  display: block;
+}
+
+aside {
+  grid-area: side;
+  margin-right: 0.5rem;
+  border-style:dotted;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  margin-right: 0;
+}
+
+p {
+  font-weight: 100;
+  color: var(--light-color);
+  display: inline-flex;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0;
+} 
+
+.circle-div {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+.small-circle-div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.small-circle-div:hover {
+  animation-name: rotate;
+  animation-duration: .7s;
+}
+
+.intro-div {
+  animation-duration: 3s;
+  animation-name: slidein;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  height: 200px;
+  font-weight: 500;
+  color:black;
+  display: inline-flex;
+  font-size: 30px;
+  text-transform:uppercase;
+}
+
+.intro-div p {
+  font-weight: 500;
+  color:black;
+  display: inline-flex;
+  font-size: 30px;
+  text-transform:uppercase;
+}
+
+.info-div {
+  margin-top: 25px;
+  margin-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  height: auto;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.info-div ul {
+  text-decoration: none;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.info-div a {
+  text-decoration: none;
+  color:var(--light-color);
+}
+
+.larger-project-img {
+  width: 500px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  padding: 10px;
+}
+ 
+.project-img {
+  width: 300px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  padding: 10px;
+}
+
+.header-footer-font{
+  opacity: 0;
+}
+  
+  @media screen and (max-width: 768px) {
+    /* Use flex-direction to stack the navbar, sidebar, and body */
+   
+    main,
+    nav {
+      flex-direction: column;
+    }
+    /* Make the sidebar stack below the body, not using aside currently.
+    
+    aside {
+      order: 2;
+    }*/
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
